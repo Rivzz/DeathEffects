@@ -1,7 +1,11 @@
 package com.mtjanney.deatheffects.util;
 
 import com.mtjanney.deatheffects.config.Configurations;
+import com.mtjanney.deatheffects.config.PlayerData;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -96,6 +100,31 @@ public class InventoryItems
         meta.setLore(MessageUtil.formatList(Configurations.BOOK_LORE));
 
         item.setItemMeta(meta);
+
+        return item;
+    }
+
+    public static ItemStack firework(Player player)
+    {
+        ItemStack item = new ItemStack(Material.FIREWORK);
+        ItemMeta meta = item.getItemMeta();
+
+        meta.setDisplayName(MessageUtil.format("&aFirework"));
+
+        List<String> lore = new ArrayList<>();
+
+        lore.add(MessageUtil.format(player.hasPermission(Permissions.FIREWORK) ? "&a» UNLOCKED" : "&c» LOCKED"));
+
+        meta.setLore(lore);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES);
+
+        item.setItemMeta(meta);
+
+        if (PlayerData.exists(player.getUniqueId()))
+        {
+            if (PlayerData.loadWrapper(player.getUniqueId()).getDeathEffect().equals("FIREWORK"))
+                item.addUnsafeEnchantment(Enchantment.DURABILITY, 0);
+        }
 
         return item;
     }

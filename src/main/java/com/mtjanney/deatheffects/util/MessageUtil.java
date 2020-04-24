@@ -8,6 +8,8 @@ import java.util.List;
 
 public class MessageUtil
 {
+    public static String NO_PERMISSION = "You don't have the required permission.";
+
     public static String format(String message)
     {
         return ChatColor.translateAlternateColorCodes('&', message);

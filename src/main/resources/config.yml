@@ -1,0 +1,41 @@
+# ****************************************************
+# Death Effects - VERSION: 1.0.0 - VERSIONS: 1.8 - 1.15
+# ****************************************************
+#
+# If you find a bug or you have any questions, feel free to either PM me on Spigot, or message me on Discord @ Janney#6801
+# Furthermore, if you have any feedback you'd like to give me please drop me a review on Spigot
+#
+# Keep in mind that this plugin has 1.8 particles supported currently! I'll be adding more in the near future c:
+#
+# Link to Help Discord - https://discord.gg/8r3a89J
+#
+# Below this message you'll find options that you can configure to your liking! If you need help feel free to message me as well!
+# ********************************************************************************************************************************
+# Make sure you DONT TOUCH the version below! Just trust me, it'll be a mess
+
+options:
+  version notification: true
+  version: 1.0.0
+  chat-prefix: '&bDeath Effects &7// '
+
+book:
+  title: '&bExample Info Title'
+  lore:
+    - '&eExample Info for &aVIP &eranks'
+    - '&eYou can even add multiple lines'
+
+sounds:
+  add: BURP
+  remove: ANVIL_LAND
+
+join-item:
+  enabled: true
+  slot: 4
+  item: ENDER_CHEST
+  name: '&b&lParticles'
+  lore:
+    - '&7You can customize what this says'
+    - '&7OH! Multiple lines?!'
+
+# You can find a list of all possible sounds here - https://github.com/Attano/Spigot-1.8/blob/master/org/bukkit/Sound.java
+# ********************************************************************************************************************************

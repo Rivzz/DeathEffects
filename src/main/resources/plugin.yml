@@ -1,0 +1,12 @@
+name: DeathEffects
+description: Death made fun with effects
+version: ${project.version}
+website: mtjanney.com
+authors: [mtjanney]
+
+main: com.mtjanney.deatheffects.DeathEffects
+
+commands:
+  deatheffects:
+    description: root command for death effects
+    aliases: [de]

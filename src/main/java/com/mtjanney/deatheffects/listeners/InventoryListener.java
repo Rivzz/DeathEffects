@@ -29,15 +29,15 @@ public class InventoryListener implements Listener
         {
             event.setCancelled(true);
 
-            if (!player.hasPermission(Permissions.FIREWORK))
-            {
-                MessageUtil.message(player, MessageUtil.NO_PERMISSION);
-
-                return;
-            }
-
             if (event.getRawSlot() == 10)
             {
+                if (!player.hasPermission(Permissions.FIREWORK))
+                {
+                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+
+                    return;
+                }
+
                 PlayerWrapper wrapper;
                 if (PlayerData.exists(player.getUniqueId())) wrapper = PlayerData.loadWrapper(player.getUniqueId());
                 else wrapper = new PlayerWrapper();
@@ -47,7 +47,15 @@ public class InventoryListener implements Listener
                 PlayerData.create(player.getUniqueId(), wrapper);
             }
 
-            player.openInventory(InventoryHandler.classicParticles(player, 1));
+            // Utilities
+            if (event.getRawSlot() == 45) player.openInventory(InventoryHandler.mainMenu(1));
+            else if (event.getRawSlot() == 53) player.openInventory(InventoryHandler.classicParticles(player, 2));
+        }
+        else if (view.getTitle().equalsIgnoreCase(InventoryHandler.CLASSIC_PARTICLES_2))
+        {
+            event.setCancelled(true);
+
+            if (event.getRawSlot() == 45) player.openInventory(InventoryHandler.classicParticles(player, 1));
         }
     }
 }

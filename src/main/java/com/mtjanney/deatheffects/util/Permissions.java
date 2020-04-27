@@ -2,6 +2,9 @@ package com.mtjanney.deatheffects.util;
 
 public class Permissions
 {
+    // Admin
+    public static String ADMIN = "de.admin";
+
     // Classic
     public static String FIREWORK = "de.particles.firework";
     public static String BARRIER = "de.particles.barrier";

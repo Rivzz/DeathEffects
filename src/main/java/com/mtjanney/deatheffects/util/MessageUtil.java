@@ -1,5 +1,6 @@
 package com.mtjanney.deatheffects.util;
 
+import com.mtjanney.deatheffects.config.Configurations;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -26,7 +27,7 @@ public class MessageUtil
 
     public static void message(CommandSender sender, String message)
     {
-        sender.sendMessage(format(message));
+        sender.sendMessage(format(Configurations.OPTIONS_CHAT_PREFIX + message));
     }
 
     public static void help(CommandSender sender, int page)

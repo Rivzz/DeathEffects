@@ -206,7 +206,7 @@ public class InventoryItems
 
     public static ItemStack magic(Player player)
     {
-        ItemStack item = new ItemStack(Material.POTION, 1, (byte) 8236);
+        ItemStack item = new ItemStack(379);
         ItemMeta meta = item.getItemMeta();
 
         meta.setDisplayName(MessageUtil.format("&aMagic"));
@@ -434,11 +434,11 @@ public class InventoryItems
         ItemStack item = new ItemStack(Material.INK_SACK, 1, (byte) 1);
         ItemMeta meta = item.getItemMeta();
 
-        meta.setDisplayName(MessageUtil.format("&aSpark"));
+        meta.setDisplayName(MessageUtil.format("&aHeart"));
 
         List<String> lore = new ArrayList<>();
 
-        lore.add(MessageUtil.format(player.hasPermission(Permissions.SPARK) ? "&a» UNLOCKED" : "&c» LOCKED"));
+        lore.add(MessageUtil.format(player.hasPermission(Permissions.HEART) ? "&a» UNLOCKED" : "&c» LOCKED"));
 
         meta.setLore(lore);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES);
@@ -447,7 +447,7 @@ public class InventoryItems
 
         if (PlayerData.exists(player.getUniqueId()))
         {
-            if (PlayerData.loadWrapper(player.getUniqueId()).getDeathEffect().equals("SPARK"))
+            if (PlayerData.loadWrapper(player.getUniqueId()).getDeathEffect().equals("HEART"))
                 item.addUnsafeEnchantment(Enchantment.DURABILITY, 0);
         }
 
@@ -631,7 +631,7 @@ public class InventoryItems
 
     public static ItemStack spell(Player player)
     {
-        ItemStack item = new ItemStack(Material.POTION, 1, (byte) 16386);
+        ItemStack item = new ItemStack(380);
         ItemMeta meta = item.getItemMeta();
 
         meta.setDisplayName(MessageUtil.format("&aSpell"));
@@ -731,7 +731,7 @@ public class InventoryItems
 
     public static ItemStack splash(Player player)
     {
-        ItemStack item = new ItemStack(Material.POTION);
+        ItemStack item = new ItemStack(Material.BOAT);
         ItemMeta meta = item.getItemMeta();
 
         meta.setDisplayName(MessageUtil.format("&aSplash"));

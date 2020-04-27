@@ -11,11 +11,13 @@
 #
 # Below this message you'll find options that you can configure to your liking! If you need help feel free to message me as well!
 # ********************************************************************************************************************************
-# Make sure you DONT TOUCH the version below! Just trust me, it'll be a mess
+# Make sure you DON'T TOUCH the version below! Just trust me, it'll be a mess
+
+version: 1.0.0
 
 options:
-  version notification: true
-  version: 1.0.0
+  version-notification: true
+  effect-amount: 10
   chat-prefix: '&bDeath Effects &7// '
 
 book:

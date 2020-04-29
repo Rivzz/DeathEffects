@@ -1,0 +1,21 @@
+# ****************************************************
+# Death Effects - VERSION: 1.0.0 - VERSIONS: 1.8 - 1.15
+# ****************************************************
+#
+# You can modify almost all the messages here, if you make changes be sure to use /de reload
+# once you've completed your changes.
+# ******************************************************************************************
+general:
+  no-permission: '&cYou don''t have permission to do this.'
+  error-offline: '&cPlayer must be online.'
+
+effect:
+  equip-self: '&aYou''ve started using the &e%Effect% &aeffect.'
+  equip-other: '&aYou''ve set &e%Player%&a''s active effect to &e%Effect%&a.'
+  equip-from-other: '&aYour active effect has been set to &e%Effect%&a.'
+  remove-self: '&cYou''ve removed your active effect.'
+  remove-other: '&cYou''ve removed &e%Player%&a''s active effect.'
+  remove-from-other: '&cYour active effect has been removed.'
+  no-active: '&cYou have no active effect.'
+  no-active-other: '&cThis player has no active effect.'
+# ******************************************************************************************

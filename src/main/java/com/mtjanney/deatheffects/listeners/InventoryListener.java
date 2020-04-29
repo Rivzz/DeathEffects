@@ -1,6 +1,7 @@
 package com.mtjanney.deatheffects.listeners;
 
 import com.mtjanney.deatheffects.config.Configurations;
+import com.mtjanney.deatheffects.config.Language;
 import com.mtjanney.deatheffects.config.PlayerData;
 import com.mtjanney.deatheffects.handlers.InventoryHandler;
 import com.mtjanney.deatheffects.util.MessageUtil;
@@ -38,6 +39,8 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.mainMenu(1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_REMOVE, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_REMOVE_SELF, true);
             }
         }
         else if (view.getTitle().equalsIgnoreCase(InventoryHandler.CLASSIC_PARTICLES_1))
@@ -46,9 +49,9 @@ public class InventoryListener implements Listener
 
             if (event.getRawSlot() == 10)
             {
-                if (!player.hasPermission(Permissions.FIREWORK))
+                if (!player.hasPermission(Permissions.FIREWORK) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -64,12 +67,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Firework"), true);
             }
             else if (event.getRawSlot() == 11)
             {
-                if (!player.hasPermission(Permissions.BARRIER))
+                if (!player.hasPermission(Permissions.BARRIER) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -85,12 +90,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Barrier"), true);
             }
             else if (event.getRawSlot() == 12)
             {
-                if (!player.hasPermission(Permissions.CLOUD))
+                if (!player.hasPermission(Permissions.CLOUD) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -106,12 +113,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Cloud"), true);
             }
             else if (event.getRawSlot() == 13)
             {
-                if (!player.hasPermission(Permissions.CRITICAL))
+                if (!player.hasPermission(Permissions.CRITICAL) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -127,12 +136,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Critical"), true);
             }
             else if (event.getRawSlot() == 14)
             {
-                if (!player.hasPermission(Permissions.CRITICAL_MAGIC))
+                if (!player.hasPermission(Permissions.CRITICAL_MAGIC) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -148,12 +159,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Magic"), true);
             }
             else if (event.getRawSlot() == 15)
             {
-                if (!player.hasPermission(Permissions.LAVA))
+                if (!player.hasPermission(Permissions.LAVA) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -169,12 +182,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Lava"), true);
             }
             else if (event.getRawSlot() == 16)
             {
-                if (!player.hasPermission(Permissions.WATER))
+                if (!player.hasPermission(Permissions.WATER) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -190,12 +205,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Water"), true);
             }
             else if (event.getRawSlot() == 19)
             {
-                if (!player.hasPermission(Permissions.ENCHANTMENT))
+                if (!player.hasPermission(Permissions.ENCHANTMENT) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -211,12 +228,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Enchantment"), true);
             }
             else if (event.getRawSlot() == 20)
             {
-                if (!player.hasPermission(Permissions.EXPLOSION_SMALL))
+                if (!player.hasPermission(Permissions.EXPLOSION_SMALL) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -232,12 +251,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Small Explosion"), true);
             }
             else if (event.getRawSlot() == 21)
             {
-                if (!player.hasPermission(Permissions.EXPLOSION_MEDIUM))
+                if (!player.hasPermission(Permissions.EXPLOSION_MEDIUM) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -253,12 +274,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Medium Explosion"), true);
             }
             else if (event.getRawSlot() == 22)
             {
-                if (!player.hasPermission(Permissions.EXPLOSION_LARGE))
+                if (!player.hasPermission(Permissions.EXPLOSION_LARGE) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -274,12 +297,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Large Explosion"), true);
             }
             else if (event.getRawSlot() == 23)
             {
-                if (!player.hasPermission(Permissions.SPARK))
+                if (!player.hasPermission(Permissions.SPARK) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -295,12 +320,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Spark"), true);
             }
             else if (event.getRawSlot() == 24)
             {
-                if (!player.hasPermission(Permissions.FLAME))
+                if (!player.hasPermission(Permissions.FLAME) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -316,12 +343,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Flame"), true);
             }
             else if (event.getRawSlot() == 25)
             {
-                if (!player.hasPermission(Permissions.HEART))
+                if (!player.hasPermission(Permissions.HEART) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -337,12 +366,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Heart"), true);
             }
             else if (event.getRawSlot() == 28)
             {
-                if (!player.hasPermission(Permissions.LAVA_POP))
+                if (!player.hasPermission(Permissions.LAVA_POP) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -358,12 +389,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Lava Pop"), true);
             }
             else if (event.getRawSlot() == 29)
             {
-                if (!player.hasPermission(Permissions.NOTE))
+                if (!player.hasPermission(Permissions.NOTE) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -379,12 +412,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Note"), true);
             }
             else if (event.getRawSlot() == 30)
             {
-                if (!player.hasPermission(Permissions.PORTAL))
+                if (!player.hasPermission(Permissions.PORTAL) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -400,12 +435,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Portal"), true);
             }
             else if (event.getRawSlot() == 31)
             {
-                if (!player.hasPermission(Permissions.REDSTONE))
+                if (!player.hasPermission(Permissions.REDSTONE) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -421,12 +458,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Redstone"), true);
             }
             else if (event.getRawSlot() == 32)
             {
-                if (!player.hasPermission(Permissions.SLIME))
+                if (!player.hasPermission(Permissions.SLIME) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -442,12 +481,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Slime"), true);
             }
             else if (event.getRawSlot() == 33)
             {
-                if (!player.hasPermission(Permissions.SMOKE_SMALL))
+                if (!player.hasPermission(Permissions.SMOKE_SMALL) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -463,12 +504,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Small Smoke"), true);
             }
             else if (event.getRawSlot() == 34)
             {
-                if (!player.hasPermission(Permissions.SMOKE_LARGE))
+                if (!player.hasPermission(Permissions.SMOKE_LARGE) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -484,6 +527,8 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Large Smoke"), true);
             }
 
             // Utilities
@@ -501,6 +546,8 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 1));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_REMOVE, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_REMOVE_SELF, true);
             }
             else if (event.getRawSlot() == 53) player.openInventory(InventoryHandler.classicParticles(player, 2));
         }
@@ -510,9 +557,9 @@ public class InventoryListener implements Listener
 
             if (event.getRawSlot() == 10)
             {
-                if (!player.hasPermission(Permissions.SPELL))
+                if (!player.hasPermission(Permissions.SPELL) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -528,12 +575,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 2));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Spell"), true);
             }
             else if (event.getRawSlot() == 11)
             {
-                if (!player.hasPermission(Permissions.SNOW))
+                if (!player.hasPermission(Permissions.SNOW) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -549,12 +598,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 2));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Snow"), true);
             }
             else if (event.getRawSlot() == 12)
             {
-                if (!player.hasPermission(Permissions.HAPPY_VILLAGER))
+                if (!player.hasPermission(Permissions.HAPPY_VILLAGER) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -570,12 +621,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 2));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Happy Villager"), true);
             }
             else if (event.getRawSlot() == 13)
             {
-                if (!player.hasPermission(Permissions.ANGRY_VILLAGER))
+                if (!player.hasPermission(Permissions.ANGRY_VILLAGER) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -591,12 +644,14 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 2));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Angry Villager"), true);
             }
             else if (event.getRawSlot() == 14)
             {
-                if (!player.hasPermission(Permissions.SPLASH))
+                if (!player.hasPermission(Permissions.SPLASH) && !player.hasPermission(Permissions.ALL_PARTICLES))
                 {
-                    MessageUtil.message(player, MessageUtil.NO_PERMISSION);
+                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
 
                     return;
                 }
@@ -612,6 +667,8 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 2));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_ADD, 2F, 1F);
+
+                MessageUtil.message(player, Language.EFFECT_EQUIP_SELF.replace("%Effect%", "Splash"), true);
             }
 
             if (event.getRawSlot() == 45) player.openInventory(InventoryHandler.classicParticles(player, 1));
@@ -628,6 +685,8 @@ public class InventoryListener implements Listener
                 player.openInventory(InventoryHandler.classicParticles(player, 2));
 
                 player.playSound(player.getLocation(), Configurations.SOUNDS_REMOVE, 2F, 1F);
+                
+                MessageUtil.message(player, Language.EFFECT_REMOVE_SELF, true);
             }
         }
     }

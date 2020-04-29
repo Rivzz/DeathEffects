@@ -45,7 +45,7 @@ public class InventoryItems
 
         List<String> lore = new ArrayList<>();
 
-        lore.add(MessageUtil.format("&aTotal Particles&7: &b4"));
+        lore.add(MessageUtil.format("&aTotal Particles&7: &b4 &7(Coming soon)"));
         lore.add(MessageUtil.format("&7&m---------------------"));
         lore.add(MessageUtil.format("&7Select a special effect to"));
         lore.add(MessageUtil.format("&7appear when you die!"));
@@ -67,7 +67,7 @@ public class InventoryItems
 
         List<String> lore = new ArrayList<>();
 
-        lore.add(MessageUtil.format("&aTotal Effects&7: &b15"));
+        lore.add(MessageUtil.format("&aTotal Effects&7: &b15 &7(Coming Soon)"));
         lore.add(MessageUtil.format("&7&m---------------------"));
         lore.add(MessageUtil.format("&7Select a death sound"));
         lore.add(MessageUtil.format("&7&m---------------------"));

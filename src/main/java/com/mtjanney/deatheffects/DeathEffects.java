@@ -2,6 +2,7 @@ package com.mtjanney.deatheffects;
 
 import com.mtjanney.deatheffects.commands.Command_DeathEffects;
 import com.mtjanney.deatheffects.config.Configurations;
+import com.mtjanney.deatheffects.config.Language;
 import com.mtjanney.deatheffects.config.PlayerData;
 import com.mtjanney.deatheffects.listeners.DeathListener;
 import com.mtjanney.deatheffects.listeners.InventoryListener;
@@ -21,6 +22,7 @@ public final class DeathEffects extends JavaPlugin
     public void onEnable()
     {
         new Configurations(this);
+        new Language(this);
         new PlayerData(this);
 
         getCommand("deatheffects").setExecutor(new Command_DeathEffects());

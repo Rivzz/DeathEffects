@@ -4,6 +4,12 @@ public class Permissions
 {
     // Admin
     public static String ADMIN = "de.admin";
+    public static String SET = "de.set";
+    public static String REMOVE = "de.remove";
+    public static String ALL_PARTICLES = "de.particles.*";
+
+    // Players
+    public static String ADD = "de.add";
 
     // Classic
     public static String FIREWORK = "de.particles.firework";

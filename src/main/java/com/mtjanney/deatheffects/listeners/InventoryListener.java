@@ -4,14 +4,19 @@ import com.mtjanney.deatheffects.config.Configurations;
 import com.mtjanney.deatheffects.config.Language;
 import com.mtjanney.deatheffects.config.PlayerData;
 import com.mtjanney.deatheffects.handlers.InventoryHandler;
+import com.mtjanney.deatheffects.util.InventoryItems;
 import com.mtjanney.deatheffects.util.MessageUtil;
 import com.mtjanney.deatheffects.util.Permissions;
 import com.mtjanney.deatheffects.util.PlayerWrapper;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.InventoryView;
+import sun.security.krb5.Config;
 
 public class InventoryListener implements Listener
 {
@@ -688,6 +693,28 @@ public class InventoryListener implements Listener
                 
                 MessageUtil.message(player, Language.EFFECT_REMOVE_SELF, true);
             }
+        }
+    }
+
+    @EventHandler
+    public void onJoin(PlayerJoinEvent event)
+    {
+        Player player = event.getPlayer();
+
+        if (player.getInventory().contains(InventoryItems.chest())) return;
+
+        player.getInventory().setItem(Configurations.JOIN_ITEM_SLOT, InventoryItems.chest());
+    }
+
+    @EventHandler
+    public void onRightClick(PlayerInteractEvent event)
+    {
+        Player player = event.getPlayer();
+
+        if (player.getInventory().getItemInHand().getItemMeta().getDisplayName().equals(MessageUtil.format(Configurations.JOIN_ITEM_NAME)))
+        {
+            player.playSound(player.getLocation(), Sound.CHEST_OPEN, 2F, 1F);
+            player.openInventory(InventoryHandler.mainMenu(1));
         }
     }
 }

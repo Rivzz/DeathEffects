@@ -43,6 +43,7 @@ public class Command_DeathEffects implements CommandExecutor
                 }
 
                 new Configurations(DeathEffects.getInstance());
+                new Language(DeathEffects.getInstance());
 
                 MessageUtil.message(player, "&7Reloaded &bDeath Effects &e" + DeathEffects.getInstance().getDescription().getVersion(), true);
             }

@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import sun.security.krb5.Config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -805,6 +806,21 @@ public class InventoryItems
 
         meta.setLore(lore);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES);
+
+        item.setItemMeta(meta);
+
+        return item;
+    }
+
+    public static ItemStack chest()
+    {
+        ItemStack item = new ItemStack(Configurations.JOIN_ITEM_ITEM);
+        ItemMeta meta = item.getItemMeta();
+
+        meta.setDisplayName(MessageUtil.format(Configurations.JOIN_ITEM_NAME));
+
+        meta.setLore(MessageUtil.formatList(Configurations.JOIN_ITEM_LORE));
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_POTION_EFFECTS);
 
         item.setItemMeta(meta);
 

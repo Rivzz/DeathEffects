@@ -49,13 +49,6 @@ public class Command_DeathEffects implements CommandExecutor
             }
             else if (args[0].equalsIgnoreCase("remove"))
             {
-                if (!player.hasPermission(Permissions.REMOVE))
-                {
-                    MessageUtil.message(player, Language.GENERAL_NO_PERMISSION, true);
-
-                    return false;
-                }
-
                 if (!PlayerData.exists(player.getUniqueId()))
                 {
                     MessageUtil.message(player, Language.EFFECT_NO_ACTIVE, true);

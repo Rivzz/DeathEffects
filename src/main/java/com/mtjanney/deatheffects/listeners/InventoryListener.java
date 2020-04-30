@@ -8,6 +8,7 @@ import com.mtjanney.deatheffects.util.InventoryItems;
 import com.mtjanney.deatheffects.util.MessageUtil;
 import com.mtjanney.deatheffects.util.Permissions;
 import com.mtjanney.deatheffects.util.PlayerWrapper;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -701,6 +702,8 @@ public class InventoryListener implements Listener
     {
         Player player = event.getPlayer();
 
+        if (!Configurations.JOIN_ITEM_ENABLED) return;
+
         if (player.getInventory().contains(InventoryItems.chest())) return;
 
         player.getInventory().setItem(Configurations.JOIN_ITEM_SLOT, InventoryItems.chest());
@@ -710,6 +713,8 @@ public class InventoryListener implements Listener
     public void onRightClick(PlayerInteractEvent event)
     {
         Player player = event.getPlayer();
+
+        if (player.getInventory().getItemInHand().getType().equals(Material.AIR)) return;
 
         if (player.getInventory().getItemInHand().getItemMeta().getDisplayName().equals(MessageUtil.format(Configurations.JOIN_ITEM_NAME)))
         {
